@@ -5,7 +5,6 @@ var client = new elasticsearch.Client({
     host: 'localhost:9200'
 });
 
-
 var workouts = [
     {
         id: 1,
@@ -30,7 +29,7 @@ router.use((req, res, next) => {
 })
 
 // !------------------ EXPRESS - ELASTICSEARCH routes --------------------/
-// *------------------------- GET all workouts --------------------------*/
+// *------------------------- GET all workouts --------------------------*/ TODO
 
 // TODO Rewrite the route to get all from the client
 // router.get('/workouts', (req, res) => {
@@ -40,7 +39,7 @@ router.use((req, res, next) => {
 //     });
 // })
 
-// *-------------------------- POST workout -----------------------------*/
+// *-------------------------- POST workout -----------------------------*/ OK
 router.post('/workout', (req, res) => {
     if (!req.body.id) {
         return res.status(400).send({
@@ -64,7 +63,7 @@ router.post('/workout', (req, res) => {
     }
 });
 
-// *------------------- GET specyfic workouts by id ----------------------*/
+// *------------------- GET specyfic workouts by id ----------------------*/ ERR
 
 // TODO check check for 404 conneciton issues with the client
 // router.get('/workouts/:id', (req, res) => {
@@ -108,7 +107,8 @@ router.post('/workout', (req, res) => {
 
 // !-------------------------- EXPRES routes -----------------------------/
 
-// *------------------------- GET all workouts --------------------------*/
+
+// *------------------------- GET all workouts --------------------------*/ OK
 // router.get('/workouts', (req, res) => {
 //     return res.status(200).send({
 //         message: 'GET workouts call succeeded',
@@ -116,7 +116,7 @@ router.post('/workout', (req, res) => {
 //     });
 // })
 
-// *------------------- GET specyfic workouts by id ----------------------*/
+// *------------------- GET specyfic workouts by id ----------------------*/ OK
 // router.get('/workouts/:id', (req, res) => {
 //     let workout = workouts.find(workout => workout.id == req.params.id);
 //     if (!workout) {
@@ -131,7 +131,7 @@ router.post('/workout', (req, res) => {
 //     };
 // });
 
-// *-------------------------- POST workout -----------------------------*/
+// *-------------------------- POST workout -----------------------------*/ OK
 // router.post('/workout', (req, res) => {
 //     if (!req.body.id) {
 //         return res.status(400).send({
@@ -145,7 +145,7 @@ router.post('/workout', (req, res) => {
 //     };
 // });
 
-// *--------------------------- PUT workout -----------------------------*/
+// *--------------------------- PUT workout -----------------------------*/ OK
 // router.put('/workout', (req, res) => {
 // console.log('req.body :', req.body);
 //     if (!req.body.id) {
@@ -161,7 +161,7 @@ router.post('/workout', (req, res) => {
 //     };
 // });
 
-// *------------------ DELETE specyfic workout by Id ---------------------*/
+// *------------------ DELETE specyfic workout by Id ---------------------*/ OK
 // router.delete('/workout/:id', (req, res) => {
 //     var foundIndex = workouts.findIndex(d => d.id === req.params.id);
 //     workouts.splice(foundIndex, 1);
